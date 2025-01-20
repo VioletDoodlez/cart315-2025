@@ -27,7 +27,7 @@ You feel a bit dizzy.
  
  After hours of walking nonstop, your legs feel like jelly. The sun is starting to set, you need to find a place to sleep soon.
  
- + Keep walking.
+ + Keep walking. -> walk
  + Set up camp. -> camp
  
  === forest ===
