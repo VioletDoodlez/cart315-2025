@@ -24,3 +24,5 @@ I wrote the rest of my text in a Google Document because it would be easy to wri
 I made sure to add conditions, so that depending on the choices the player makes, the dialogue might change.
 
 I kept my writing simple and to the point in most cases, while still adding a small twist of humor to it and making the narrator a bit sassy. If I had more time to explore this tool, I would have definitely loved to see what other choices I could give to the player. 
+
+[Project for class](../Projects/make-a-thing)
