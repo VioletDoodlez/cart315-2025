@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
         }
     }
 
+// what happens when the player gets hit
     private void GetHit() {
         _lives--;
 

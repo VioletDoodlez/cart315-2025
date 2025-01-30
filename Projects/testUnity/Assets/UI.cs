@@ -21,6 +21,8 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //displays lives
+
         _livesTxt.text = $"Lives: {_playerRef.Lives}";
     }
 }
