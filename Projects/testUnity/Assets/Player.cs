@@ -44,12 +44,19 @@ public class Player : MonoBehaviour
         if (other.gameObject.tag == "circle") {
             if (!(OnPlayerHit is null))
             OnPlayerHit();
-            //Destroy(other.gameObject);
+            Destroy(other.gameObject);
         }
     }
 
     private void GetHit() {
         _lives--;
+
+        if (_lives < 1) { 
+         if (gameObject.tag == "Player") {
+            Destroy(gameObject);
+        }
+        }
+
         Debug.Log("ow");
     }
 }
