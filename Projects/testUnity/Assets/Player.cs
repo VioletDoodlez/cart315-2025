@@ -1,3 +1,5 @@
+// Used the following tutorial as a source:
+// https://medium.com/nerd-for-tech/implementing-a-life-system-unity-e2a9c6b44db5
 using System;
 using System.Threading;
 using UnityEngine;

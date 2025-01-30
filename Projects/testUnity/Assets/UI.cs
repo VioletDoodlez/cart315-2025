@@ -1,3 +1,5 @@
+// Used the following tutorial as a source:
+// https://medium.com/nerd-for-tech/creating-collectables-unity-ccb59ea0c191
 using System;
 using UnityEngine;
 using UnityEngine.UI;
