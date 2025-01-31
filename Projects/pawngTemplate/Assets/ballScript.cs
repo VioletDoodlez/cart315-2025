@@ -8,6 +8,8 @@ public class ballScript : MonoBehaviour
     private Rigidbody2D rb;
     private int hDir, vDir;
     private int[] directions = {-1, 1};
+    public int score1, score2;
+    public AudioSource blip;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,14 +24,26 @@ public class ballScript : MonoBehaviour
         
     }
 
-    private void OnCollisionEnted2D(Collision2D wall) {
+    private void OnCollisionEnter2D(Collision2D wall) {
         if (wall.gameObject.name == "leftWall"){
             //pts P2
+            score2 += 1;
             Reset();
         }
         if (wall.gameObject.name == "rightWall"){
             //pts P1
+            score1 += 1;
             Reset();
+        }
+
+        if (wall.gameObject.name == "bottomWall"|| wall.gameObject.name == "topWall") {
+            blip.pitch = 0.75f;
+            blip.Play();
+        }
+        
+        if (wall.gameObject.name == "paddleLeft"|| wall.gameObject.name == "paddleRight") {
+            blip.pitch = 1f;
+            blip.Play();
         }
     }
 
