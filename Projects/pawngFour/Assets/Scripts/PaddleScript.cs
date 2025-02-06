@@ -50,12 +50,12 @@ public class PaddleScript : MonoBehaviour
 
         if (gameObject.name == "paddleTop")
         {
-            if (Input.GetKey(downKey) && xPos > leftWall)
+            if (Input.GetKey(KeyCode.A) && xPos > leftWall)
             {
                 xPos -= paddleSpeed;
             }
 
-            if (Input.GetKey(upKey) && xPos < rightWall)
+            if (Input.GetKey(KeyCode.D) && xPos < rightWall)
             {
                 xPos += paddleSpeed;
             }
@@ -64,12 +64,12 @@ public class PaddleScript : MonoBehaviour
 
         if (gameObject.name == "paddleBottom")
         {
-            if (Input.GetKey(upKey) && xPos > leftWall)
+            if (Input.GetKey(KeyCode.D) && xPos > leftWall)
             {
                 xPos -= paddleSpeed;
             }
 
-            if (Input.GetKey(downKey) && xPos < rightWall)
+            if (Input.GetKey(KeyCode.A) && xPos < rightWall)
             {
                 xPos += paddleSpeed;
             }
