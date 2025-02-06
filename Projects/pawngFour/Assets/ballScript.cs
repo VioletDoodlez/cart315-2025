@@ -8,7 +8,7 @@ public class ballScript : MonoBehaviour
     private Rigidbody2D rb;
     private int hDir, vDir;
     private int[] directions = { -1, 1 };
-    public int score1, score2;
+    public int score1, score2, score3, score4;
     public AudioSource blip;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -38,8 +38,20 @@ public class ballScript : MonoBehaviour
             score1 += 1;
             Reset();
         }
+        if (wall.gameObject.name == "topWall")
+        {
+            //pts P3
+            score3 += 1;
+            Reset();
+        }
+        if (wall.gameObject.name == "bottomWall")
+        {
+            //pts P4
+            score4 += 1;
+            Reset();
+        }
 
-        if (wall.gameObject.name == "bottomWall" || wall.gameObject.name == "topWall")
+        if (wall.gameObject.name == "paddleTop" || wall.gameObject.name == "paddleBottom")
         {
             blip.pitch = 0.75f;
             blip.Play();
