@@ -4,24 +4,26 @@ using UnityEngine;
 public class Dropper : MonoBehaviour
 {
     public GameObject circle;
-    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start() {
+    void Start()
+    {
         StartCoroutine(Drop());
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
-    
-    private IEnumerator Drop() {
+
+    private IEnumerator Drop()
+    {
         float chance = Random.Range(0, 100);
-        
+
         // do something
         Debug.Log("Drop");
-        float   rX  = Random.Range(-6f, 6f);
+        float rX = Random.Range(-6f, 6f);
         Vector3 loc = new Vector3(rX, 6, 0);
         Instantiate(circle, loc, transform.rotation);
         // wait
@@ -30,5 +32,5 @@ public class Dropper : MonoBehaviour
         // go again
         StartCoroutine(Drop());
     }
-    
+
 }

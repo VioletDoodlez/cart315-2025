@@ -281,13 +281,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 14761829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: adb99fdb7ec3200439f2e4b87c664dd7, type: 3}
+  m_Script: {fileID: 11500000, guid: fcc491bbf137f5c4db888ffd3693c227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballSpeed: 150
+  ballSpeed: 100
   score1: 0
   score2: 0
-  blip: {fileID: 1498931550}
+  score3: 0
+  score4: 0
+  blip: {fileID: 0}
 --- !u!1 &370866115
 GameObject:
   m_ObjectHideFlags: 0
@@ -438,12 +440,12 @@ PrefabInstance:
     - target: {fileID: 8538361129468675970, guid: 6849af7e848c34ce2aca6d9bdc9c327d,
         type: 3}
       propertyPath: leftWall
-      value: -8
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 8538361129468675970, guid: 6849af7e848c34ce2aca6d9bdc9c327d,
         type: 3}
       propertyPath: rightWall
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8538361129468675970, guid: 6849af7e848c34ce2aca6d9bdc9c327d,
         type: 3}
@@ -676,12 +678,12 @@ PrefabInstance:
     - target: {fileID: 8538361129468675970, guid: 6849af7e848c34ce2aca6d9bdc9c327d,
         type: 3}
       propertyPath: leftWall
-      value: -8
+      value: -7
       objectReference: {fileID: 0}
     - target: {fileID: 8538361129468675970, guid: 6849af7e848c34ce2aca6d9bdc9c327d,
         type: 3}
       propertyPath: rightWall
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8538361129468675970, guid: 6849af7e848c34ce2aca6d9bdc9c327d,
         type: 3}

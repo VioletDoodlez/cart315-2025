@@ -21,11 +21,13 @@ public class PaddleScript : MonoBehaviour
     {
         if (gameObject.name == "paddleLeft")
         {
+            //move down
             if (Input.GetKey(downKey) && yPos > bottomWall)
             {
                 yPos -= paddleSpeed;
             }
 
+            //move up
             if (Input.GetKey(upKey) && yPos < topWall)
             {
                 yPos += paddleSpeed;
@@ -35,11 +37,13 @@ public class PaddleScript : MonoBehaviour
 
         if (gameObject.name == "paddleRight")
         {
+            //move down
             if (Input.GetKey(upKey) && yPos > bottomWall)
             {
                 yPos -= paddleSpeed;
             }
 
+            //move up
             if (Input.GetKey(downKey) && yPos < topWall)
             {
                 yPos += paddleSpeed;
@@ -50,11 +54,13 @@ public class PaddleScript : MonoBehaviour
 
         if (gameObject.name == "paddleTop")
         {
+            //move left
             if (Input.GetKey(KeyCode.A) && xPos > leftWall)
             {
                 xPos -= paddleSpeed;
             }
 
+            //move right
             if (Input.GetKey(KeyCode.D) && xPos < rightWall)
             {
                 xPos += paddleSpeed;
@@ -64,11 +70,13 @@ public class PaddleScript : MonoBehaviour
 
         if (gameObject.name == "paddleBottom")
         {
+            //move left
             if (Input.GetKey(KeyCode.D) && xPos > leftWall)
             {
                 xPos -= paddleSpeed;
             }
 
+            //move right
             if (Input.GetKey(KeyCode.A) && xPos < rightWall)
             {
                 xPos += paddleSpeed;

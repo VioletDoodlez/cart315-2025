@@ -28,26 +28,34 @@ public class ballScript : MonoBehaviour
     {
         if (wall.gameObject.name == "leftWall")
         {
-            //pts P2
+            //pts P2, P3, P4
             score2 += 1;
+            score3 += 1;
+            score4 += 1;
             Reset();
         }
         if (wall.gameObject.name == "rightWall")
         {
-            //pts P1
+            //pts P1, P3, P4
             score1 += 1;
+            score3 += 1;
+            score4 += 1;
             Reset();
         }
         if (wall.gameObject.name == "topWall")
         {
-            //pts P3
-            score3 += 1;
+            //pts P1, P2, P4
+            score1 += 1;
+            score2 += 1;
+            score4 += 1;
             Reset();
         }
         if (wall.gameObject.name == "bottomWall")
         {
-            //pts P4
-            score4 += 1;
+            //pts P1, P2, P3
+            score1 += 1;
+            score2 += 1;
+            score3 += 1;
             Reset();
         }
 
