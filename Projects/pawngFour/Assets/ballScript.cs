@@ -26,36 +26,16 @@ public class ballScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D wall)
     {
-        if (wall.gameObject.name == "leftWall")
+        if (wall.gameObject.name == "leftWall" || wall.gameObject.name == "rightWall")
         {
-            //pts P2, P3, P4
+            //pts P2 
             score2 += 1;
-            score3 += 1;
-            score4 += 1;
             Reset();
         }
-        if (wall.gameObject.name == "rightWall")
+        if (wall.gameObject.name == "topWall" || wall.gameObject.name == "bottomWall")
         {
-            //pts P1, P3, P4
+            //pts P1
             score1 += 1;
-            score3 += 1;
-            score4 += 1;
-            Reset();
-        }
-        if (wall.gameObject.name == "topWall")
-        {
-            //pts P1, P2, P4
-            score1 += 1;
-            score2 += 1;
-            score4 += 1;
-            Reset();
-        }
-        if (wall.gameObject.name == "bottomWall")
-        {
-            //pts P1, P2, P3
-            score1 += 1;
-            score2 += 1;
-            score3 += 1;
             Reset();
         }
 
