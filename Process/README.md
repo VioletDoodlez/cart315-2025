@@ -53,7 +53,7 @@ I thought of adding the scores, using the method I used last time for my life co
 
 [Project for this week](../Projects/pawngFour/)
 
-## Thursday, February 13, 2025
+## Thursday, February 13, 2025: Breakin' Out
 
 Due to being very busy with projects this week, I haven’t had a chance to explore a lot in Unity. I wanted to try and make the brick layer move on its own at random intervals, but I only really managed to make the layer move within a single area, kind of like it was shaking. While it wasn’t what I was trying to achieve, it actually really liked how it looked, it could make for a very interesting visual effect.
 
