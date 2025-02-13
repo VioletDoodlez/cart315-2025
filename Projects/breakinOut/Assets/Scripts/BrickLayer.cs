@@ -5,7 +5,6 @@ public class BrickLayer : MonoBehaviour
     public GameObject brick;
     public int rows, columns;
     public float bs_h, bs_v;
-
     public int numBricks;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -16,7 +15,7 @@ public class BrickLayer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        transform.localPosition = new Vector3(Random.Range(-.05f, .05f), Random.Range(-.05f, .05f), 0);
     }
 
     public void Lay()
