@@ -63,7 +63,7 @@ I’d also have to set a constant speed, but an interesting idea would be to mak
 
 [Attempt for this week](../Projects/breakinOut/)
 
-## Thursday, February 20, 2025
+## Thursday, February 20, 2025: Breakin' Out Part 2
 
 For this week, I went back to breakinOut to figure out how to make the bricklayer move. Last week, I said that I wanted to make the layer move at random, but for this week at the very least, I wanted to get the layer to move at all.
 
