@@ -5,11 +5,11 @@ using UnityEngine.UI;
 public class UI : MonoBehaviour
 {
     [SerializeField]
-    private TMP_Text _titleTxt;
+    public TextMeshProUGUI _titleTxt;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        _titleTxt.text = "GAME OVER";
     }
 
     // Update is called once per frame

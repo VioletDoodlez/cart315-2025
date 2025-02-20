@@ -63,4 +63,15 @@ I’d also have to set a constant speed, but an interesting idea would be to mak
 
 [Attempt for this week](../Projects/breakinOut/)
 
+## Thursday, February 20, 2025
+
+For this week, I went back to breakinOut to figure out how to make the bricklayer move. Last week, I said that I wanted to make the layer move at random, but for this week at the very least, I wanted to get the layer to move at all.
+
+One of my classmates directed me towards Vector3.Lerp, which allowed the game object to move within a certain amount of time. It took a while for me to fully understand how it fully worked, looking through the link provided by my friend (Unity - Scripting API: Vector3.Lerp). Using a while loop in a coroutine, while the current time passing is smaller than the time it should take to move, the layer will move in a given direction. Vector3.right and its variants helped me a lot when it came to understanding what to put within the Vector3.Lerp parentheses. Before the loop, I reset the timeElapsed back to 0 and start a new coroutine after the loop.
+
+In the end, I managed to make it loop left and right, and I had it move up and down as well. While it does move in a certain pattern instead of at random like I intended to try last week, I’m proud of what I made, even if it is minor. I’d like to explore more ways to incorporate movement done by the program in my future projects.
+
+As an extra thing to add to the program, I wanted to add Text to the game over screen. For some strange reason, however, it didn’t seem to work. I used the technique I used for my testUnity project to display lives, but it didn’t work. The text was white and was within the scene. I used a few other techniques as well, but still to no avail. It might be something I’ve overlooked/forgotten or simply a problem with my computer.
+
+[Project for this week](../Projects/breakinOutTwo/)
 
