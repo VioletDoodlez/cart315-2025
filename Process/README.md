@@ -77,6 +77,21 @@ As an extra thing to add to the program, I wanted to add Text to the game over s
 
 ## Thursday, March 6, 2025: Prototype Iteration Process
 
+When I originally sat down to come up with a concept for my final project, I had thought of making a fighting game in the same vein as Mortal Kombat. However, even though I’ve managed to gain a bit more experience, I knew it would still be an ambitious project to make. Therefore, I thought of making a platformer. 
+
+While platforming games can be a lot of fun, I find that they can be lackluster depending on their goal, layout and feel. A few weeks ago, I went on a website to play old flash games from my childhood. I managed to stumble upon an old The Amazing World of Gumball game, School House Rush. While the mechanics were a little clunky, it was excusable considering they were converted from Flash. The main problem was that there was no clear goal and limited ways to defend against enemies. Vague instructions mixed with long levels don’t really make people want to play through the game to see the next level. The main collectables are suns, which serve no purpose than to simply being collected, and the invisibility frames are nearly nonexistent, making you incredibly vulnerable.
+
+There are a few main things I want to consider when making a platformer:
+
+1.	Anything that you can collect has a purpose for the player
+2.	There is a fair balance number of enemies and/or obstacles
+3.	Allow the player to get rid of enemies
+
+In order to make things a little more interesting, I thought of incorporating the shoot-em-up concept we learned prior to our reading week. This would give players a chance to fight back against their enemies. It would also help the game feel a little more interactive rather than having the character simply run and jump. The movement buttons (left and right) would be controlled with one hand while the jumping and shooting buttons would be controlled with another. These could be subject to change. I am also considering a crouch button, which could possibly allow the player to duck under projectiles. Collectables would give the player temporary buffs, besides the usual health collectable. Possible ideas include increased speed, a spread shot and higher jumps. Enemies would cause damage when the player collides with them. They’d move back and forth in an area, or perhaps even follow the player. Other enemies would be able to launch projectiles at the player which would allow the players to dodge.
+
+The one thing I’m having trouble with is figuring out is the goal. I’m considering adding leavers or switches that the player needs to find in order to open the exit, giving them a reason to progress in the game.  
+
+
 ### Extra Credit
 No Straight Roads is a Malaysian indie game developed by Metronomic, released in 2020. What originally drew me to the game was a unique art style paired with strong saturated colours. However, what truly drew me into the game was the music, and the role it plays with the gameplay.
 
