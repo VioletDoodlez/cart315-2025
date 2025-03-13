@@ -115,4 +115,3 @@ Next time, I will be looking at adding the shooting mechanic making the camera m
 
 [Prototype for this week](../Projects/Prototype01/)
 
-
