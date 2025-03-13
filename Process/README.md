@@ -91,7 +91,6 @@ In order to make things a little more interesting, I thought of incorporating th
 
 The one thing I’m having trouble with is figuring out is the goal. I’m considering adding leavers or switches that the player needs to find in order to open the exit, giving them a reason to progress in the game.  
 
-
 ### Extra Credit
 No Straight Roads is a Malaysian indie game developed by Metronomic, released in 2020. What originally drew me to the game was a unique art style paired with strong saturated colours. However, what truly drew me into the game was the music, and the role it plays with the gameplay.
 
@@ -102,3 +101,18 @@ During the game, you can switch between the two main characters: Mayday, a heavy
 Strategy and timing would be an interesting concept to apply to a future project, but with how much I know currently, it would take a lot of time to apply in a way that would feel fun for players and not like unfair or even tedious.
 
 One of its major downsides, however, is the two-player mode. The game is played in a third person perspective, which isn’t unusual for games like these. However, the game displays both players on the screen at once instead of a traditional split screen. While I can see why they did this from an artistic perspective, it becomes detrimental to the gameplay experience. The camera only follows the player that is furthest from the camera for some strange reason. I’m assuming because the developers didn’t bother changing it from single-player mode, where the character you control moves faster that the other, which is only programmed to follow you until it’s their turn. This makes moving around, especially the platforming sections before boss fights, incredibly frustrating. This often leads to one player being left offscreen and having either the player followed by the camera find them, of having the offscreen player scramble to find their way back, all while getting damaged by attacks they cannot see. If the camera followed the person closest to the screen or rather “zoomed out” to show the screen and accommodate both players, it would have been much more enjoyable as a shared experience.
+
+## Thursday, March 13, 2025: First Prototype Iteration
+For my first prototype iteration, I wanted to focus on making the player character move and jump, and land on platforms.
+
+While it was easy to get my player character to move, as it’s something we’ve done before. I made sure to add a “floor” to the project, which was just an empty game object with a Box Collider 2D component. Because the player character will have a Rigidbody 2D component, I needed them to have something to land on after jumping. I wasn’t exploring how to move the camera just yet, so I placed a left and right wall (also an empty game object with Box Collider 2D) so that the player stayed within the camera confines. The tricky part was getting them to jump.
+
+I originally tried using the same technique to move left and right for the jumping mechanic, but nothing worked. A friend of mine recommended looking at AddForce to make my character jump, which I found on the [Unity Documentation site](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rigidbody.AddForce.html). I originally made the speed the same number as the one provided in the example before changing it to a much higher number. I also changed GetKey() to GetKeyDown(), so that the player only jumps once when the jump key is pressed. While the jump does work, paired with the left and right movement, it feels a little clunky. I may need to explore more about the physics of the Unity engine.
+
+I also managed to create platforms for the player to land on, manipulating the square sprite’s shape and again using Box Collider 2D, where the player can land on a platform and jump to the next successfully.
+
+Next time, I will be looking at adding the shooting mechanic making the camera move, as well as look over the jumping mechanic again to make the controls more fluid.
+
+[Prototype for this week](../Projects/Prototype01/)
+
+
