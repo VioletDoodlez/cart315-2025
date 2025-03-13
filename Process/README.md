@@ -105,7 +105,11 @@ One of its major downsides, however, is the two-player mode. The game is played 
 ## Thursday, March 13, 2025: First Prototype Iteration
 For my first prototype iteration, I wanted to focus on making the player character move and jump, and land on platforms.
 
-While it was easy to get my player character to move, as it’s something we’ve done before. I made sure to add a “floor” to the project, which was just an empty game object with a Box Collider 2D component. Because the player character will have a Rigidbody 2D component, I needed them to have something to land on after jumping. I wasn’t exploring how to move the camera just yet, so I placed a left and right wall (also an empty game object with Box Collider 2D) so that the player stayed within the camera confines. The tricky part was getting them to jump.
+While it was easy to get my player character to move, as it’s something we’ve done before. I made sure to add a “floor” to the project, which was just an empty game object with a Box Collider 2D component. Because the player character will have a Rigidbody 2D component, I needed them to have something to land on after jumping. I wasn’t exploring how to move the camera just yet, so I placed a left and right wall (also an empty game object with Box Collider 2D) so that the player stayed within the camera confines. 
+
+![walls](../Images/Walls-prototype01.png)
+
+The tricky part was getting them to jump.
 
 I originally tried using the same technique to move left and right for the jumping mechanic, but nothing worked. A friend of mine recommended looking at AddForce to make my character jump, which I found on the [Unity Documentation site](https://docs.unity3d.com/6000.0/Documentation/ScriptReference/Rigidbody.AddForce.html). I originally made the speed the same number as the one provided in the example before changing it to a much higher number. I also changed GetKey() to GetKeyDown(), so that the player only jumps once when the jump key is pressed. While the jump does work, paired with the left and right movement, it feels a little clunky. I may need to explore more about the physics of the Unity engine.
 
