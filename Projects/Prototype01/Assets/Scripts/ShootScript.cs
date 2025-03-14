@@ -25,6 +25,6 @@ public class Shooting : MonoBehaviour
         GameObject go = Instantiate<GameObject>(shot);
         go.transform.position = shotLocation.transform.position;
         Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
-        rb.linearVelocityY = shotSpeed;
+        rb.linearVelocityX = shotSpeed;
     }
 }
