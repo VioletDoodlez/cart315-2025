@@ -6,8 +6,9 @@ public class PlayerScript : MonoBehaviour
     private float xPos, yPos;
 
     Rigidbody2D playerRigidbody;
-    public float playerSpeed = .05f;
-    public float jumpSpeed = 10f;
+    public float playerSpeed = 10f;
+    public bool isGrounded;
+    public float jumpSpeed = 400f;
     public float floor, leftWall, rightWall;
 
     public KeyCode leftKey, rightKey, upKey;
@@ -15,6 +16,14 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+    }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Floor"))
+        {
+            isGrounded = true;
+        }
     }
 
     // Update is called once per frame
@@ -40,12 +49,16 @@ public class PlayerScript : MonoBehaviour
 
         transform.localPosition = new Vector3(xPos, transform.position.y, 0);
 
-        if (Input.GetKeyDown(upKey))
+        if (Input.GetKeyDown(upKey) && isGrounded)
         {
-            playerRigidbody.AddForce(transform.up * jumpSpeed);
-            Debug.Log("hi");
+            playerRigidbody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+            Debug.Log("weee!");
+
+
+            isGrounded = false;
 
         }
 
     }
+
 }

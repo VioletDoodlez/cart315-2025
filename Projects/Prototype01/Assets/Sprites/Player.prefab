@@ -175,7 +175,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd90a3902d88c4c428159297db772f0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSpeed: 0.05
+  playerSpeed: 10
+  jumpSpeed: 400
   floor: -5
   leftWall: -8
   rightWall: 8
