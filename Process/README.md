@@ -119,3 +119,19 @@ Next time, I will be looking at adding the shooting mechanic making the camera m
 
 [Prototype for this week](../Projects/Prototype01/)
 
+## Thursday, March 20, 2025: Prototype Iteration Process 3
+This week, I revisited the jumping mechanic, incorporated the shooting mechanic, and added an enemy.
+
+For the jump, it took a while to fix. I tried multiplying the jump speed with Time.deltaTime, but it caused the jump to vary in height significantly. Removing it fixed the issue and using the code found at [this web page](https://gamedevbeginner.com/how-to-jump-in-unity-with-or-without-physics/) made the jump less floaty. I also incorporated a way to prevent the player from double jumping with the help of a classmate. If the player is colliding with a game object tagged as “Floor”, it prevents the player from double jumping (the floor and platforms indicated below). 
+
+Unfortunately, it only does so when jumping. If the player were to fall off a platform simply by walking off, it would allow the player to double jump. I’ll have to find a way to fix that.
+
+![floors](../Images/Floors-prototype02.png)
+
+As for the shooting mechanic, I used the technique and code we learned the week we learned how to make a shoot-em-up. I only changed it to the location to be on the right side of the player and for the projectiles to move horizontally. The projectiles disappear when they hit a game object tagged as “Wall”. So far, the only direction that the player can shoot is right. I plan on making the player shoot left or right depending on what direction they’re moving. I may revisit the physics of the projectiles, because they cause my player to be sent backwards a bit.
+
+I’ve added an enemy for the player to shoot at, having them move left and right on a platform. I used the automatic movement I learned for the breakinOut week, but this time, I set actual values rather than just directions. They disappear when the player shoots at them. Then, I replaced the usual square sprite with a sprite sheet I made in Pixilart. I’ll have to figure out how to make animations in Unity, and I’ve already found [a web page](https://learn.unity.com/tutorial/introduction-to-sprite-animations#5fa66921edbc2a0020bcaae3) to help with that.
+
+Next time, I’ll be trying to make animations, possibly try out tiles for the background and incorporating a lives system.
+
+[Prototype for this week](../Projects/Prototype01/)

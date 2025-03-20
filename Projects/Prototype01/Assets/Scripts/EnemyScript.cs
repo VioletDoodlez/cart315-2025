@@ -34,7 +34,7 @@ public class EnemyScript : MonoBehaviour
         while (timeElapsed < transitionDuration)
         {
             float ratio = timeElapsed / transitionDuration;
-            gameObject.transform.position = Vector3.Lerp(Vector3.left, Vector3.right, ratio);
+            gameObject.transform.position = Vector3.Lerp(new Vector3(2.5f, 0.8f, 0f), new Vector3(4.5f, 0.8f, 0f), ratio);
             timeElapsed += Time.deltaTime;
 
             yield return new WaitForEndOfFrame();
@@ -48,7 +48,7 @@ public class EnemyScript : MonoBehaviour
         while (timeElapsed < transitionDuration)
         {
             float ratio = timeElapsed / transitionDuration;
-            gameObject.transform.position = Vector3.Lerp(Vector3.right, Vector3.left, ratio);
+            gameObject.transform.position = Vector3.Lerp(new Vector3(4.5f, 0.8f, 0f), new Vector3(2.5f, 0.8f, 0f), ratio);
             timeElapsed += Time.deltaTime;
 
             yield return new WaitForEndOfFrame();
