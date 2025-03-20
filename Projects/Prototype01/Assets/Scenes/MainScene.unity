@@ -906,6 +906,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7068615673773555640, guid: f6f81325a022aeb45b4c612138470b4b, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 8658351832292309105, guid: 163e09a7e7a586a4f94933d7669cf3b0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
