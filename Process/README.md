@@ -132,6 +132,8 @@ As for the shooting mechanic, I used the technique and code we learned the week 
 
 I’ve added an enemy for the player to shoot at, having them move left and right on a platform. I used the automatic movement I learned for the breakinOut week, but this time, I set actual values rather than just directions. They disappear when the player shoots at them. Then, I replaced the usual square sprite with a sprite sheet I made in Pixilart. I’ll have to figure out how to make animations in Unity, and I’ve already found [a web page](https://learn.unity.com/tutorial/introduction-to-sprite-animations#5fa66921edbc2a0020bcaae3) to help with that.
 
+![enemy](../Images/Enemy-prototype02.png)
+
 Next time, I’ll be trying to make animations, possibly try out tiles for the background and incorporating a lives system.
 
 [Prototype for this week](../Projects/Prototype01/)
