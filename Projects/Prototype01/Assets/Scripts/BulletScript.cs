@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class shotScript : MonoBehaviour
+public class BulletScript : MonoBehaviour
 {
     private float yPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
