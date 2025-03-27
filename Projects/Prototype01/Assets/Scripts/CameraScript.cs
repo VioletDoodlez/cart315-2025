@@ -1,7 +1,10 @@
+using System.Collections;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
+    public float cameraSpeed = 2f;
+    public float yOffset = -1f;
     public Transform player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -9,8 +12,9 @@ public class CameraScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
-        transform.position = player.transform.position + new Vector3(0, 1, -5);
+        Vector3 newPos = new Vector3(player.position.x, player.position.y + yOffset, -10f);
+        transform.position = Vector3.Slerp(transform.position, newPos, cameraSpeed * Time.deltaTime);
     }
 }

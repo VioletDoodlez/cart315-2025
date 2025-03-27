@@ -9,8 +9,9 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D playerRigidbody;
     public float playerSpeed = 10f;
     public static Action OnPlayerHit;
-    private int _lives = 3;
-    public int Lives { get => _lives; }
+    public static Action OnPlayerHeal;
+    private int lives = 3;
+    public int Lives { get => lives; }
     public bool isGrounded;
     public float jumpSpeed = 400f;
     public float floor, leftWall, rightWall;
@@ -19,26 +20,34 @@ public class PlayerScript : MonoBehaviour
 
     void Start()
     {
-        _lives = 3;
+        lives = 3;
 
         playerRigidbody = GetComponent<Rigidbody2D>();
         PlayerScript.OnPlayerHit += GetHit;
+        PlayerScript.OnPlayerHeal += GetHealth;
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D other)
     {
-        if (collision.gameObject.CompareTag("Floor"))
+        if (other.gameObject.tag == "Floor")
         {
             isGrounded = true;
         }
 
-        if (collision.gameObject.CompareTag("Enemy"))
+        if (other.gameObject.tag == "Enemy")
         {
             if (!(OnPlayerHit is null))
             {
                 OnPlayerHit();
             }
-
+        }
+        if (other.gameObject.tag == "Health")
+        {
+            if (!(OnPlayerHeal is null))
+            {
+                OnPlayerHeal();
+            }
+            Destroy(other.gameObject);
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -50,9 +59,9 @@ public class PlayerScript : MonoBehaviour
     }
     private void GetHit()
     {
-        _lives--;
+        lives--;
 
-        if (_lives < 1)
+        if (lives < 1)
         {
             if (gameObject.tag == "Player")
             {
@@ -61,6 +70,13 @@ public class PlayerScript : MonoBehaviour
         }
 
         Debug.Log("ow");
+    }
+
+    private void GetHealth()
+    {
+        lives++;
+
+        Debug.Log("aaah");
     }
 
     // Update is called once per frame
