@@ -140,7 +140,7 @@ Next time, I’ll be trying to make animations, possibly try out tiles for the b
 
 Prototype for this week
  
-## Thursday, March 27, 2025: Prototype Iteration Process 3
+## Thursday, March 27, 2025: Prototype Iteration Process 4
 This week, I added a lives mechanic, added camera movement, and worked on sprites for the game.
 
 I used the same technique for the lives system I used for my first Unity project, displaying them on the top left. I also added collectable lives using a [tutorial](https://medium.com/nerd-for-tech/creating-collectables-unity-ccb59ea0c191) from the same site by the same author. However, instead of being a separate collectable with its own script, it’s in player script to affect the life count. I do want to consider the possibility of making a limit of lives the player can have at a time. 
