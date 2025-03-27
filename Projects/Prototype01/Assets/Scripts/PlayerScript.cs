@@ -1,5 +1,7 @@
 using System;
+using UnityEditor.SearchService;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerScript : MonoBehaviour
 {
@@ -66,6 +68,8 @@ public class PlayerScript : MonoBehaviour
             if (gameObject.tag == "Player")
             {
                 Destroy(gameObject);
+
+                GameOver();
             }
         }
 
@@ -77,6 +81,11 @@ public class PlayerScript : MonoBehaviour
         lives++;
 
         Debug.Log("aaah");
+    }
+
+    public void GameOver()
+    {
+        SceneManager.LoadScene("GameOverScene");
     }
 
     // Update is called once per frame

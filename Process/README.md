@@ -137,3 +137,20 @@ I’ve added an enemy for the player to shoot at, having them move left and righ
 Next time, I’ll be trying to make animations, possibly try out tiles for the background and incorporating a lives system.
 
 [Prototype for this week](../Projects/Prototype01/)
+
+Prototype for this week
+ 
+## Thursday, March 27, 2025: Prototype Iteration Process 3
+This week, I added a lives mechanic, added camera movement, and worked on sprites for the game.
+
+I used the same technique for the lives system I used for my first Unity project, displaying them on the top left. I also added collectable lives using a [tutorial](https://medium.com/nerd-for-tech/creating-collectables-unity-ccb59ea0c191) from the same site by the same author. However, instead of being a separate collectable with its own script, it’s in player script to affect the life count. I do want to consider the possibility of making a limit of lives the player can have at a time. 
+
+As for the camera movement, While I did find helpful code on this [site](https://stackoverflow.com/questions/65816546/unity-camera-follows-player-script), I used code from a [tutorial](https://www.youtube.com/watch?v=FXqwunFQuao) on YouTube. Instead of the camera centering the player and always following it, there is now a slight delay when the camera moves that will slowly center on the player.
+
+I made a small (and very vague) plan of how I would want the layout of the level to be. It would be a bit tough when considering the enemy movement, so I’d have to take a look at that.
+
+![layout](../Images/potentiallayout.png) 
+
+Most of my time this week was spent working on sprites. I’ll be continuing that, as well as actually looking at animation and tilemaps, and time permitting, add a title and game over screen.
+
+[Prototype for this week](../Projects/Prototype01/)
