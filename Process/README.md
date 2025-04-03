@@ -154,3 +154,23 @@ I made a small (and very vague) plan of how I would want the layout of the level
 Most of my time this week was spent working on sprites. I’ll be continuing that, as well as actually looking at animation and tilemaps, and time permitting, add a title and game over screen.
 
 [Prototype for this week](../Projects/Prototype01/)
+
+## Thursday, April 3, 2025: Prototype Iteration Process 5
+This week, I focused more on the visuals of my game.
+
+I did manage to get my game over scene to work. It appears a few seconds after the player runs out of lives.
+
+I finished creating the sprite sheet for my player character. I wanted my game to have a sci-fi theme, so I took a bit of a more modern take on space age fashion. Because the player can shoot regardless of whether they are moving or not, I added shooting sprites when the player moves, jumps and falls.
+
+![playersheet](../Images/playersheetfinal.png)
+
+I made each animation 2 frames mainly to save time. I created the animations thanks to [these][two] videos and now I need to attach them to what the player does.
+
+I also made a tile palette for the platforms and floor, but it’s a bit difficult to figure out collision with them. I noticed that the tilemap collider makes the player move slower. I’ll try to add the tiles a bit later, until I can figure out how to make the collision work well.
+
+The enemy doesn’t move up and down as it does in the sprite sheet, but it isn’t urgent to add that in. I will, however, be doing so with the lives, because they’re stationary.
+
+Next week, I’ll be figuring out how to change the enemies code to move left and right so I can place them anywhere, and time permitting (of course), add a title screen.
+
+[Prototype for this week](../Projects/Prototype01/)
+
