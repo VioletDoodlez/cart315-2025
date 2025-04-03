@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,7 +17,7 @@ public class PlayerScript : MonoBehaviour
     public int Lives { get => lives; }
     public bool isGrounded;
     public float jumpSpeed = 400f;
-    public float floor, leftWall, rightWall;
+    public float leftWall, rightWall;
 
     public KeyCode leftKey, rightKey, upKey;
 
@@ -49,7 +50,6 @@ public class PlayerScript : MonoBehaviour
             {
                 OnPlayerHeal();
             }
-            Destroy(other.gameObject);
         }
     }
     void OnCollisionExit2D(Collision2D collision)
@@ -65,12 +65,12 @@ public class PlayerScript : MonoBehaviour
 
         if (lives < 1)
         {
-            if (gameObject.tag == "Player")
-            {
-                Destroy(gameObject);
-
-                GameOver();
-            }
+            // if (gameObject.tag == "Player")
+            // {
+            //     Destroy(gameObject);
+            // }
+            Debug.Log("dead");
+            StartCoroutine(GameOver());
         }
 
         Debug.Log("ow");
@@ -78,13 +78,24 @@ public class PlayerScript : MonoBehaviour
 
     private void GetHealth()
     {
-        lives++;
+
+        if (lives < 3)
+        {
+            lives++;
+
+            if (gameObject.tag == "Health")
+            {
+                Destroy(gameObject);
+            }
+        }
 
         Debug.Log("aaah");
     }
 
-    public void GameOver()
+    public IEnumerator GameOver()
     {
+        GetComponent<SpriteRenderer>().color = new Color(0, 0, 0, 0);
+        yield return new WaitForSeconds(2);
         SceneManager.LoadScene("GameOverScene");
     }
 
