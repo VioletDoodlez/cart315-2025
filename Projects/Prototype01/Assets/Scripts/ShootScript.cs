@@ -25,7 +25,7 @@ public class ShootScript : MonoBehaviour
         if (isLeft)
         {
             GameObject go = Instantiate<GameObject>(shot);
-            go.transform.position = shotLocationL.transform.position;
+            go.transform.position = shotLocationR.transform.position;
             Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
             rb.linearVelocityX = -shotSpeed;
         }

@@ -12,10 +12,10 @@ public class PlayerScript : MonoBehaviour
     Rigidbody2D playerRigidbody;
     public float playerSpeed = 10f;
     public static Action OnPlayerHit;
-    public static Action OnPlayerHeal;
     private int lives = 3;
     public int Lives { get => lives; }
     public bool isGrounded;
+    public bool facingRight = true;
     public float jumpSpeed = 400f;
     public float leftWall, rightWall;
 
@@ -27,7 +27,6 @@ public class PlayerScript : MonoBehaviour
 
         playerRigidbody = GetComponent<Rigidbody2D>();
         PlayerScript.OnPlayerHit += GetHit;
-        PlayerScript.OnPlayerHeal += GetHealth;
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -44,14 +43,22 @@ public class PlayerScript : MonoBehaviour
                 OnPlayerHit();
             }
         }
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
         if (other.gameObject.tag == "Health")
         {
-            if (!(OnPlayerHeal is null))
+            if (lives < 3)
             {
-                OnPlayerHeal();
+                Heal();
+                Destroy(other.gameObject);
+
             }
         }
     }
+
     void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Floor"))
@@ -76,18 +83,9 @@ public class PlayerScript : MonoBehaviour
         Debug.Log("ow");
     }
 
-    private void GetHealth()
+    private void Heal()
     {
-
-        if (lives < 3)
-        {
-            lives++;
-
-            if (gameObject.tag == "Health")
-            {
-                Destroy(gameObject);
-            }
-        }
+        lives++;
 
         Debug.Log("aaah");
     }
@@ -104,21 +102,23 @@ public class PlayerScript : MonoBehaviour
     {
         xPos = transform.position.x;
 
-        if (Input.GetKey(leftKey))
+        if (Input.GetKey(leftKey)) //move left
         {
             GetComponent<ShootScript>().isLeft = true;
             if (xPos > leftWall)
             {
                 xPos -= playerSpeed;
+                facingRight = false;
             }
         }
 
-        if (Input.GetKey(rightKey))
+        if (Input.GetKey(rightKey)) //move right
         {
             GetComponent<ShootScript>().isLeft = false;
             if (xPos < rightWall)
             {
                 xPos += playerSpeed;
+                facingRight = true;
             }
         }
 
@@ -132,6 +132,19 @@ public class PlayerScript : MonoBehaviour
 
             isGrounded = false;
 
+        }
+
+        if (facingRight)
+        {
+            Vector3 updateScale = transform.localScale;
+            updateScale.x = 2;
+            transform.localScale = updateScale;
+        }
+        else
+        {
+            Vector3 updateScale = transform.localScale;
+            updateScale.x = -2;
+            transform.localScale = updateScale;
         }
 
     }

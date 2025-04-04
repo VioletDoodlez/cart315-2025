@@ -17,7 +17,7 @@ public class BulletScript : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.tag == "Wall")
+        if (other.gameObject.tag == "Wall" || other.gameObject.tag == "Floor")
         {
             Destroy(this.gameObject);
         }

@@ -164,7 +164,7 @@ I finished creating the sprite sheet for my player character. I wanted my game t
 
 ![playersheet](../Images/playersheetfinal.png)
 
-I made each animation 2 frames mainly to save time. I created the animations thanks to [these][two] videos and now I need to attach them to what the player does.
+I made each animation 2 frames mainly to save time. I created the animations thanks to [these](https://www.youtube.com/watch?v=Sg_w8hIbp4Y)[two](https://www.youtube.com/watch?v=hkaysu1Z-N8&t=30s) videos and now I need to attach them to what the player does.
 
 I also made a tile palette for the platforms and floor, but it’s a bit difficult to figure out collision with them. I noticed that the tilemap collider makes the player move slower. I’ll try to add the tiles a bit later, until I can figure out how to make the collision work well.
 
