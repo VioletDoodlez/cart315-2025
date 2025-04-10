@@ -26,8 +26,13 @@ public class ShootScript : MonoBehaviour
         {
             GameObject go = Instantiate<GameObject>(shot);
             go.transform.position = shotLocationR.transform.position;
+            //go.GetComponent<SpriteRenderer>().
             Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
             rb.linearVelocityX = -shotSpeed;
+
+            Vector3 updateScale = transform.localScale;
+            updateScale.x = -1;
+            transform.localScale = updateScale;
         }
         else
         {
@@ -35,6 +40,10 @@ public class ShootScript : MonoBehaviour
             go.transform.position = shotLocationR.transform.position;
             Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
             rb.linearVelocityX = shotSpeed;
+
+            Vector3 updateScale = transform.localScale;
+            updateScale.x = 1;
+            transform.localScale = updateScale;
         }
     }
 }

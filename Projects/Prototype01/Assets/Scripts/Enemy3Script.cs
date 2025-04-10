@@ -1,10 +1,8 @@
 using System.Collections;
-
 using UnityEngine;
 
-public class EnemyScript : MonoBehaviour
+public class Enemy3Script : MonoBehaviour
 {
-
     private bool initialiseMovement = false; //starts movement
     private float timeElapsed = 0;
     private float transitionDuration = 4; //time it takes for layer to complete movement
@@ -35,7 +33,7 @@ public class EnemyScript : MonoBehaviour
         {
 
             float ratio = timeElapsed / transitionDuration;
-            gameObject.transform.position = Vector3.Lerp(new Vector3(2.5f, 1f, 0f), new Vector3(8.5f, 1f, 0f), ratio);
+            gameObject.transform.position = Vector3.Lerp(new Vector3(4f, 12f, 0f), new Vector3(14f, 12f, 0f), ratio);
             timeElapsed += Time.deltaTime;
 
             yield return new WaitForEndOfFrame();
@@ -49,7 +47,7 @@ public class EnemyScript : MonoBehaviour
         while (timeElapsed < transitionDuration)
         {
             float ratio = timeElapsed / transitionDuration;
-            gameObject.transform.position = Vector3.Lerp(new Vector3(8.5f, 1f, 0f), new Vector3(2.5f, 1f, 0f), ratio);
+            gameObject.transform.position = Vector3.Lerp(new Vector3(14f, 12f, 0f), new Vector3(4f, 12f, 0f), ratio);
             timeElapsed += Time.deltaTime;
 
             yield return new WaitForEndOfFrame();
@@ -58,3 +56,6 @@ public class EnemyScript : MonoBehaviour
 
     }
 }
+
+
+
