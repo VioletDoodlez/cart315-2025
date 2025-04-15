@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class BulletScript : MonoBehaviour
 {
+    SpriteRenderer bulletSprite;
     private float yPos;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        bulletSprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame

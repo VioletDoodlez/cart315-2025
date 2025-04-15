@@ -10,6 +10,9 @@ public class PlayerScript : MonoBehaviour
     private float xPos;
 
     Rigidbody2D playerRigidbody;
+    public Animator playerAnimator;
+
+    SpriteRenderer playerSprite;
     public float playerSpeed = 10f;
     public static Action OnPlayerHit;
     private int lives = 3;
@@ -26,6 +29,8 @@ public class PlayerScript : MonoBehaviour
         lives = 3;
 
         playerRigidbody = GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
+        playerSprite = GetComponent<SpriteRenderer>();
         PlayerScript.OnPlayerHit += GetHit;
     }
 
@@ -102,23 +107,27 @@ public class PlayerScript : MonoBehaviour
     {
         xPos = transform.position.x;
 
+        playerAnimator.SetFloat("pSpeed", 0);
+
         if (Input.GetKey(leftKey)) //move left
         {
+            playerAnimator.SetFloat("pSpeed", Mathf.Abs(playerSpeed));
             GetComponent<ShootScript>().isLeft = true;
             if (xPos > leftWall)
             {
                 xPos -= playerSpeed;
-                facingRight = false;
+                playerSprite.flipX = true;
             }
         }
 
         if (Input.GetKey(rightKey)) //move right
         {
+            playerAnimator.SetFloat("pSpeed", Mathf.Abs(xPos));
             GetComponent<ShootScript>().isLeft = false;
             if (xPos < rightWall)
             {
                 xPos += playerSpeed;
-                facingRight = true;
+                playerSprite.flipX = false;
             }
         }
 
@@ -134,18 +143,18 @@ public class PlayerScript : MonoBehaviour
 
         }
 
-        if (facingRight)
-        {
-            Vector3 updateScale = transform.localScale;
-            updateScale.x = 2;
-            transform.localScale = updateScale;
-        }
-        else
-        {
-            Vector3 updateScale = transform.localScale;
-            updateScale.x = -2;
-            transform.localScale = updateScale;
-        }
+        // if (facingRight)
+        // {
+        //     Vector3 updateScale = transform.localScale;
+        //     updateScale.x = 2;
+        //     transform.localScale = updateScale;
+        // }
+        // else
+        // {
+        //     Vector3 updateScale = transform.localScale;
+        //     updateScale.x = -2;
+        //     transform.localScale = updateScale;
+        // }
 
     }
 

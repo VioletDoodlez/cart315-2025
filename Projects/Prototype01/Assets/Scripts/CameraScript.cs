@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class CameraScript : MonoBehaviour
 {
-    public float cameraSpeed = 2f;
+    public float cameraSpeed = 0.5f;
     public float yOffset = 2f;
     public Transform player;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

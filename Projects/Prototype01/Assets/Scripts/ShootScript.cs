@@ -25,14 +25,11 @@ public class ShootScript : MonoBehaviour
         if (isLeft)
         {
             GameObject go = Instantiate<GameObject>(shot);
-            go.transform.position = shotLocationR.transform.position;
+            go.transform.position = shotLocationL.transform.position;
             //go.GetComponent<SpriteRenderer>().
             Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
             rb.linearVelocityX = -shotSpeed;
 
-            Vector3 updateScale = transform.localScale;
-            updateScale.x = -1;
-            transform.localScale = updateScale;
         }
         else
         {
@@ -41,9 +38,6 @@ public class ShootScript : MonoBehaviour
             Rigidbody2D rb = go.GetComponent<Rigidbody2D>();
             rb.linearVelocityX = shotSpeed;
 
-            Vector3 updateScale = transform.localScale;
-            updateScale.x = 1;
-            transform.localScale = updateScale;
         }
     }
 }
