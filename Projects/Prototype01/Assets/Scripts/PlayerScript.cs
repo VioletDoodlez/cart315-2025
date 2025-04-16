@@ -38,6 +38,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Floor")
         {
+            playerAnimator.SetBool("isGrounded", true);
             isGrounded = true;
         }
 
@@ -68,6 +69,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
+            playerAnimator.SetBool("isGrounded", false);
             isGrounded = false;
         }
     }
@@ -108,6 +110,7 @@ public class PlayerScript : MonoBehaviour
         xPos = transform.position.x;
 
         playerAnimator.SetFloat("pSpeed", 0);
+        playerAnimator.SetFloat("jSpeed", -1);
 
         if (Input.GetKey(leftKey)) //move left
         {
@@ -136,6 +139,8 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKeyDown(upKey) && isGrounded)
         {
             playerRigidbody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+            playerAnimator.SetFloat("jSpeed", jumpSpeed);
+            playerAnimator.SetBool("isGrounded", false);
             Debug.Log("weee!");
 
 
