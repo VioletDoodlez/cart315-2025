@@ -174,3 +174,22 @@ Next week, I’ll be figuring out how to change the enemies code to move left an
 
 [Prototype for this week](../Projects/Prototype01/)
 
+## Thursday, April 17, 2025: Final Iterative Prototype
+
+For the play test, I ended up adding multiple enemies, but due to time constraints, I made them all different game objects with their own script, which was a tad tedious.
+
+After last week’s play testing, I applied my feedback as best as I could. Seeing that Unity indicates to me that my computer is very slow, some variables like the player or camera’s speed didn’t change much. I made sure to rearrange the platforms and make a few of them wider so that the player could have enough space to land on. While it wasn’t pointed out by any of my play testers, I added some controls on a sign in game to make it easier for players.
+
+I ended up adding some extra things in terms of visuals, such as walls, a background and a floor that doesnt look like it's floating. I also made it so that the enemies flip when going in the opposite direction. I even managed to add some of my animations! Because it was a long process that took time to figure out due to my code being vastly different to that of the [two](https://youtu.be/hkaysu1Z-N8?si=qABMHp9dYHwMbKug)[tutorials](https://www.youtube.com/watch?v=Sg_w8hIbp4Y) I found, I only added the necessary ones to save time (the idle, walk, jump and shoot animations). One asset I couldn’t figure out how to flip properly in time was the bullet, but it still manages to work even when shooting in the opposite direction.
+
+As a slight extra, I added knockback when the player collides with an enemy, using [this tutorial](https://www.youtube.com/watch?v=0u2R9MDi-_w) I found. It prevents the player from being pushed by an enemy when colliding with it and from potentially landing on one.
+
+While I didn’t make a title screen, I did add a win screen! Using [FindWithTag](https://docs.unity3d.com/2021.3/Documentation/ScriptReference/GameObject.FindWithTag.html) to check if the enemies (tagged as “Enemy”, of course) are destroyed brings the player to a message telling them they won. If I had a bit more time, I would have loved to add my idea of moving on to a hypothetical level when all enemies are gone.
+
+![visuals](../Images/visualsfinal.png)
+
+Overall, I’m very proud of my final prototype. While I would have loved to add more, I think with the time I was given, I was able to make something fun that other people would enjoy.
+
+[Prototype](../Projects/Prototype01/)
+
+

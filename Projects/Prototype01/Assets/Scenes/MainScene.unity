@@ -30043,7 +30043,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6472436168308081420, guid: 7dfcec666028cbd4c98d35855c30c98a, type: 3}
       propertyPath: KBForce
-      value: 6
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6472436168308081420, guid: 7dfcec666028cbd4c98d35855c30c98a, type: 3}
       propertyPath: animator
