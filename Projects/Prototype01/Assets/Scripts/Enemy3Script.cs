@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Enemy3Script : MonoBehaviour
 {
+    SpriteRenderer enemySprite;
     private bool initialiseMovement = false; //starts movement
     private float timeElapsed = 0;
     private float transitionDuration = 4; //time it takes for layer to complete movement
@@ -10,7 +11,7 @@ public class Enemy3Script : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        enemySprite = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -35,6 +36,7 @@ public class Enemy3Script : MonoBehaviour
             float ratio = timeElapsed / transitionDuration;
             gameObject.transform.position = Vector3.Lerp(new Vector3(4f, 12f, 0f), new Vector3(14f, 12f, 0f), ratio);
             timeElapsed += Time.deltaTime;
+            enemySprite.flipX = true;
 
             yield return new WaitForEndOfFrame();
         }
@@ -49,6 +51,7 @@ public class Enemy3Script : MonoBehaviour
             float ratio = timeElapsed / transitionDuration;
             gameObject.transform.position = Vector3.Lerp(new Vector3(14f, 12f, 0f), new Vector3(4f, 12f, 0f), ratio);
             timeElapsed += Time.deltaTime;
+            enemySprite.flipX = false;
 
             yield return new WaitForEndOfFrame();
         }
