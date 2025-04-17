@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEditor.SearchService;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -17,10 +18,22 @@ public class PlayerScript : MonoBehaviour
     public static Action OnPlayerHit;
     private int lives = 3;
     public int Lives { get => lives; }
+
+    //bool tells us if we are on the floor or not
     public bool isGrounded;
     public bool facingRight = true;
+
+    //speed at which the player jumps
     public float jumpSpeed = 400f;
     public float leftWall, rightWall;
+
+    public float KBForce;
+    public float KBCounter;
+    public float KBTotalTime;
+
+    public bool hitRight;
+
+    // get keys for directions
 
     public KeyCode leftKey, rightKey, upKey;
 
@@ -38,12 +51,22 @@ public class PlayerScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Floor")
         {
+            playerAnimator.SetFloat("jSpeed", 0);
             playerAnimator.SetBool("isGrounded", true);
             isGrounded = true;
         }
 
         if (other.gameObject.tag == "Enemy")
         {
+            KBCounter = KBTotalTime;
+            if (other.transform.position.x > transform.position.x)
+            {
+                hitRight = true;
+            }
+            if (other.transform.position.x <= transform.position.x)
+            {
+                hitRight = false;
+            }
             if (!(OnPlayerHit is null))
             {
                 OnPlayerHit();
@@ -69,7 +92,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            playerAnimator.SetBool("isGrounded", false);
+            playerAnimator.SetBool("isGrounded", isGrounded!);
             isGrounded = false;
         }
     }
@@ -110,43 +133,60 @@ public class PlayerScript : MonoBehaviour
         xPos = transform.position.x;
 
         playerAnimator.SetFloat("pSpeed", 0);
-        playerAnimator.SetFloat("jSpeed", -1);
 
-        if (Input.GetKey(leftKey)) //move left
+        if (KBCounter <= 0)
         {
-            playerAnimator.SetFloat("pSpeed", Mathf.Abs(playerSpeed));
-            GetComponent<ShootScript>().isLeft = true;
-            if (xPos > leftWall)
+            if (Input.GetKey(leftKey)) //move left
             {
-                xPos -= playerSpeed;
-                playerSprite.flipX = true;
+                playerAnimator.SetFloat("pSpeed", Mathf.Abs(playerSpeed));
+                GetComponent<ShootScript>().isLeft = true;
+                if (xPos > leftWall)
+                {
+                    xPos -= playerSpeed;
+                    playerSprite.flipX = true;
+                }
+            }
+
+            if (Input.GetKey(rightKey)) //move right
+            {
+                playerAnimator.SetFloat("pSpeed", Mathf.Abs(xPos));
+                GetComponent<ShootScript>().isLeft = false;
+                if (xPos < rightWall)
+                {
+                    xPos += playerSpeed;
+                    playerSprite.flipX = false;
+                }
+            }
+
+            transform.localPosition = new Vector3(xPos, transform.position.y, 0);
+
+            if (Input.GetKeyDown(upKey) && isGrounded)
+            {
+                playerRigidbody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
+                playerAnimator.SetFloat("jSpeed", jumpSpeed);
+                playerAnimator.SetBool("isGrounded", isGrounded!);
+                Debug.Log("weee!");
+
+
+                isGrounded = false;
+
             }
         }
-
-        if (Input.GetKey(rightKey)) //move right
+        else
         {
-            playerAnimator.SetFloat("pSpeed", Mathf.Abs(xPos));
-            GetComponent<ShootScript>().isLeft = false;
-            if (xPos < rightWall)
+            if (hitRight == true)
             {
-                xPos += playerSpeed;
-                playerSprite.flipX = false;
+                playerRigidbody.linearVelocity = new Vector2(-KBForce, KBForce);
             }
+            if (hitRight == false)
+            {
+                playerRigidbody.linearVelocity = new Vector2(KBForce, KBForce);
+            }
+
+            KBCounter -= Time.deltaTime;
         }
 
-        transform.localPosition = new Vector3(xPos, transform.position.y, 0);
 
-        if (Input.GetKeyDown(upKey) && isGrounded)
-        {
-            playerRigidbody.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-            playerAnimator.SetFloat("jSpeed", jumpSpeed);
-            playerAnimator.SetBool("isGrounded", false);
-            Debug.Log("weee!");
-
-
-            isGrounded = false;
-
-        }
 
         // if (facingRight)
         // {
