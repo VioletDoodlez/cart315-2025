@@ -34,7 +34,7 @@ public class Enemy5Script : MonoBehaviour
         {
 
             float ratio = timeElapsed / transitionDuration;
-            gameObject.transform.position = Vector3.Lerp(new Vector3(46.5f, 14.8f, 0f), new Vector3(53f, 14.8f, 0f), ratio);
+            gameObject.transform.position = Vector3.Lerp(new Vector3(46.5f, 14f, 0f), new Vector3(53f, 14f, 0f), ratio);
             timeElapsed += Time.deltaTime;
             enemySprite.flipX = true;
 
@@ -49,7 +49,7 @@ public class Enemy5Script : MonoBehaviour
         while (timeElapsed < transitionDuration)
         {
             float ratio = timeElapsed / transitionDuration;
-            gameObject.transform.position = Vector3.Lerp(new Vector3(53f, 14.8f, 0f), new Vector3(46.5f, 14.8f, 0f), ratio);
+            gameObject.transform.position = Vector3.Lerp(new Vector3(53f, 14f, 0f), new Vector3(46.5f, 14f, 0f), ratio);
             timeElapsed += Time.deltaTime;
             enemySprite.flipX = false;
 

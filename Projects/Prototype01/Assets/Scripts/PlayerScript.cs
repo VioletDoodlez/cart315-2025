@@ -126,6 +126,11 @@ public class PlayerScript : MonoBehaviour
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("GameOverScene");
     }
+    public IEnumerator Win()
+    {
+        yield return new WaitForSeconds(2);
+        SceneManager.LoadScene("WinScene");
+    }
 
     // Update is called once per frame
     void Update()
@@ -186,6 +191,10 @@ public class PlayerScript : MonoBehaviour
             KBCounter -= Time.deltaTime;
         }
 
+        if (GameObject.FindWithTag("Enemy") == null)
+        {
+            StartCoroutine(Win());
+        }
 
 
         // if (facingRight)
